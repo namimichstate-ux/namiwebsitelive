@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMI on Campus - MSU - Meet the Team</title>
+    <meta name="description" content="Meet the E-Board members of NAMI on Campus at Michigan State University.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config for Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        namiBlue: '#00539B', // Official NAMI Blue
+                        namiGreen: '#88B733', // Official NAMI Green
+                        msuGreen: '#18453B',  // Spartan Green
+                        lightGray: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 83, 155, 0.8), rgba(24, 69, 59, 0.7)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="croplogo.jpg" alt="NAMI Logo" class="w-10 h-10 object-contain">
+                    <span class="font-heading font-bold text-xl md:text-2xl text-namiBlue tracking-tight">
+                        NAMI <span class="text-gray-500 font-normal">|</span> <span class="text-msuGreen">MSU</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#mission" class="text-gray-600 hover:text-namiBlue font-semibold transition">Our Mission</a>
+                    <a href="index.html#about" class="text-gray-600 hover:text-namiBlue font-semibold transition">About Us</a>
+                    <a href="index.html#connect" class="text-gray-600 hover:text-namiBlue font-semibold transition">Get Involved</a>
+                </div>
+
+                <!-- Back Button -->
+                <div class="flex items-center">
+                    <a href="index.html" class="bg-namiBlue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition">Back Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-5xl md:text-6xl font-bold mb-6">Meet the E-Board</h1>
+            <p class="text-xl md:text-2xl opacity-90">The passionate students leading NAMI on Campus at MSU</p>
+        </div>
+    </section>
+
+    <!-- E-Board Members -->
+    <section class="py-20 bg-lightGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <!-- President -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiBlue h-40 flex items-center justify-center">
+                        <i class="fas fa-user-tie text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">President</h3>
+                        <p class="text-namiBlue font-semibold mb-4">Tyron Bucad</p>
+                        <p class="text-gray-600 mb-6">Leading our organization with vision and passion, ensuring our mission reaches every student on campus.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vice President -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiGreen h-40 flex items-center justify-center">
+                        <i class="fas fa-users text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Vice President</h3>
+                        <p class="text-namiGreen font-semibold mb-4">Savanna Kue</p>
+                        <p class="text-gray-600 mb-6">Supporting leadership initiatives and ensuring smooth operations across all our programs and events.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secretary -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiBlue h-40 flex items-center justify-center">
+                        <i class="fas fa-clipboard-list text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Secretary</h3>
+                        <p class="text-namiBlue font-semibold mb-4">Randy Tran</p>
+                        <p class="text-gray-600 mb-6">Keeping our organization organized and ensuring clear communication among all members.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treasurer -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiGreen h-40 flex items-center justify-center">
+                        <i class="fas fa-coins text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Treasurer</h3>
+                        <p class="text-namiGreen font-semibold mb-4">Ishitha Teluguntla</p>
+                        <p class="text-gray-600 mb-6">Managing finances and ensuring resources are allocated to maximize our impact on campus.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events Coordinator -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiBlue h-40 flex items-center justify-center">
+                        <i class="fas fa-calendar-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Marketing Chair</h3>
+                        <p class="text-namiBlue font-semibold mb-4">Elsa Lin</p>
+                        <p class="text-gray-600 mb-6">Creating compelling content and managing our social media presence to amplify mental health awareness across campus.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiBlue hover:text-blue-700"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outreach Coordinator -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <div class="bg-namiGreen h-40 flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Event Coordinator</h3>
+                        <p class="text-namiGreen font-semibold mb-4">Brendan Randall</p>
+                        <p class="text-gray-600 mb-6">Planning and executing engaging events that foster community and spread mental health awareness.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-namiGreen hover:text-green-600"><i class="fas fa-envelope text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="py-20 bg-namiBlue text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-4xl font-bold mb-6">Want to Join Our Team?</h2>
+            <p class="text-xl mb-10 opacity-90">
+                Are you passionate about mental health advocacy? We're always looking for dedicated members to join our leadership team!
+            </p>
+            <a href="index.html#connect" class="inline-block bg-white text-namiBlue font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">NAMI on Campus MSU</h4>
+                    <p class="text-gray-400 text-sm">Supporting mental health awareness and advocacy at Michigan State University.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="index.html#mission" class="hover:text-white transition">Our Mission</a></li>
+                        <li><a href="index.html#connect" class="hover:text-white transition">Get Involved</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm mb-2">📧 Email: <a href="mailto:nami@msu.edu" class="hover:text-white transition">nami@msu.edu</a></p>
+                    <p class="text-gray-400 text-sm">📍 Michigan State University, East Lansing, MI</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 NAMI on Campus - MSU. All rights reserved. | Ending the Silence</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
