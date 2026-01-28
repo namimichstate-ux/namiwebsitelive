@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [
+    "/index.html",
+    "/style.css",
+    "/script.js",
+    "/eboard.html",
+    "/*.jpg",
+    "/*.JPG",
+    "/*.png"
+  ]
+}
