@@ -4,10 +4,10 @@
   "description": "NAMI MSU Website with Email Functionality - Deployed on Cloudflare Pages",
   "main": "src/index.js",
   "scripts": {
-    "deploy": "wrangler pages deploy",
+    "deploy": "wrangler pages deploy .",
     "dev": "wrangler pages dev",
     "build": "npm run build-workers",
-    "build-workers": "echo 'Building Cloudflare Workers functions'"
+    "build-workers": "echo 'Building Cloudflare Pages Functions'"
   },
   "devDependencies": {
     "wrangler": "^3.60.0"

@@ -1,6 +1,10 @@
 name = "nami-msu-website"
-main = "src/functions/send-email.js"
+type = "javascript"
 compatibility_date = "2024-01-15"
+
+[build]
+command = "echo 'Building static site'"
+watch_paths = ["src/**/*.js"]
 
 [env.production]
 routes = [
