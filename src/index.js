@@ -1,36 +1,40 @@
 /**
- * Cloudflare Worker for handling email submissions
- * This worker is deployed as a route handler on Cloudflare Pages
+ * NAMI MSU Website Worker
+ * Handles email API endpoint
  */
 
-export async function onRequest(context) {
-  const { request } = context;
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
-  // Handle CORS preflight
-  if (request.method === 'OPTIONS') {
-    return new Response(null, {
-      status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      },
-    });
-  }
-
-  if (request.method !== 'POST') {
-    return new Response(
-      JSON.stringify({ message: 'Method not allowed' }),
-      {
-        status: 405,
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
         },
-      }
-    );
-  }
+      });
+    }
 
+    // Route to email handler
+    if (url.pathname === '/send-email' && request.method === 'POST') {
+      return handleEmailSubmission(request, env);
+    }
+
+    // Health check
+    if (url.pathname === '/health') {
+      return new Response('OK');
+    }
+
+    // Not found
+    return new Response('Not Found', { status: 404 });
+  },
+};
+
+async function handleEmailSubmission(request, env) {
   try {
     const { firstName, lastName, email, message } = await request.json();
 
@@ -49,9 +53,9 @@ export async function onRequest(context) {
     }
 
     // Email configuration from environment variables
-    const emailApiToken = context.env.MAILGUN_API_TOKEN;
-    const emailDomain = context.env.MAILGUN_DOMAIN;
-    const recipientEmail = context.env.RECIPIENT_EMAIL || 'nami.michstate@gmail.com';
+    const emailApiToken = env.MAILGUN_API_TOKEN;
+    const emailDomain = env.MAILGUN_DOMAIN;
+    const recipientEmail = env.RECIPIENT_EMAIL || 'nami.michstate@gmail.com';
 
     if (!emailApiToken || !emailDomain) {
       return new Response(
@@ -75,19 +79,22 @@ Email: ${email}
 Message:
 ${message}`;
 
-    // Send email using Mailgun API (recommended for Cloudflare Workers)
+    // Send email using Mailgun API
     const formData = new FormData();
-    formData.append('from', `nami.michstate@gmail.com`);
+    formData.append('from', 'nami.michstate@gmail.com');
     formData.append('to', recipientEmail);
     formData.append('subject', `New Contact Form Submission from ${firstName} ${lastName}`);
     formData.append('text', emailBody);
     formData.append('h:Reply-To', email);
 
+    const authString = btoa(`api:${emailApiToken}`);
     const mailgunResponse = await fetch(
       `https://api.mailgun.net/v3/${emailDomain}/messages`,
       {
         method: 'POST',
-        auth: `api:${emailApiToken}`,
+        headers: {
+          'Authorization': `Basic ${authString}`,
+        },
         body: formData,
       }
     );
