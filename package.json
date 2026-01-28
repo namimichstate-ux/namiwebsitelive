@@ -1,0 +1,13 @@
+{
+  "name": "nami-msu-website",
+  "version": "1.0.0",
+  "description": "NAMI MSU Website with Email Functionality - Deployed on Cloudflare Workers",
+  "scripts": {
+    "deploy": "wrangler pages deploy .",
+    "dev": "wrangler pages dev .",
+    "pages:create": "wrangler pages project create nami-msu-website"
+  },
+  "devDependencies": {
+    "wrangler": "^4.61.0"
+  }
+}

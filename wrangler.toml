@@ -1,0 +1,3 @@
+name = "nami-msu-website"
+# All email logic is now handled client-side via EmailJS.
+# No backend functions are required.
