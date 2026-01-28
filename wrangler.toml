@@ -1,27 +1,8 @@
 name = "nami-msu-website"
-type = "javascript"
-main = "src/index.js"
+main = "src/functions/send-email.js"
 compatibility_date = "2024-01-15"
 
 [env.production]
 routes = [
   { pattern = "example.com/*", zone_name = "example.com" }
 ]
-
-[[r2_buckets]]
-binding = "ASSETS"
-bucket_name = "nami-assets"
-preview_bucket_name = "nami-assets-preview"
-
-[env.production.r2_buckets]
-binding = "ASSETS"
-bucket_name = "nami-assets"
-
-[build]
-command = "npm install"
-cwd = "./"
-watch_paths = ["src/**/*.js"]
-
-[build.upload]
-format = "modules"
-main = "./src/index.js"
