@@ -1,6 +1,0 @@
-{
-  "pages": {
-    "build_command": "echo 'Building Cloudflare Pages site'",
-    "output_directory": "."
-  }
-}

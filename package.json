@@ -2,16 +2,8 @@
   "name": "nami-msu-website",
   "version": "1.0.0",
   "description": "NAMI MSU Website with Email Functionality - Deployed on Cloudflare Pages",
-  "main": "src/index.js",
   "scripts": {
-    "deploy": "wrangler pages deploy .",
-    "dev": "wrangler pages dev",
-    "build": "npm run build-workers",
-    "build-workers": "echo 'Building Cloudflare Pages Functions'"
-  },
-  "devDependencies": {
-    "wrangler": "^3.60.0"
-  },
-  "dependencies": {
+    "build": "echo 'Building Cloudflare Pages site with functions'",
+    "dev": "echo 'Use Cloudflare Wrangler CLI for local development'"
   }
 }
